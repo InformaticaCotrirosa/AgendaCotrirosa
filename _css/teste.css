@@ -1,0 +1,55 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card{
+    border-radius: 5px;
+    box-shadow: 5px 5px 12px 0 #3bb54a;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 55px;
+    width: 100%;
+    height: auto;
+    transition: all 0.3 ease-out;
+}
+
+.card:hover{
+    transform: translateY(-5px);  
+}
+
+.card p {
+    color: black;
+    font-size: 16px;
+    font-style: oblique;
+}
+
+.green{
+    border-left: 3px solid #3bb54a;
+}
+
+.editarLocButton{ /* Green */
+    border: white;
+    color: rgb(7, 6, 6);
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 12px;
+    cursor: pointer;
+    align-items: center;
+
+}
+
+.botoesGerais{
+    margin: 15px;
+    text-align: center;
+}

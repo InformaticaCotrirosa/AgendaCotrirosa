@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: #fff;
+    font-size: 50px;
+}
+.container{
+    background: #dcdcdc;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "l r" "f f";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+}
+
+.nav-left{
+    background: #0ff;
+    grid-area: l;
+}
+
+.nav-right{
+    background: #0f0;
+    grid-area: l;
+
+}
+
+.footer {
+    background: #00f;
+    grid-area: f;
+}

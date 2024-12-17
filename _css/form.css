@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Inter' , sans-serif;
+    background-color: white;
+}
+#form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px;
+    width: min-content;
+    align-items: center;
+    box-shadow: 5px 5px 12px 10px #3bb54a;
+}
+.tituloLoc {
+    font-size: 1.8em;
+    margin-bottom: 10%;
+}
+.input {
+    min-width: 200px;
+    border-radius: 22px;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
+
+.botoesGerais {
+    margin-top: 15px;
+    text-align: center;
+}
