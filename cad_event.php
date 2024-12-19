@@ -66,7 +66,7 @@ $datage = $data_start_conv;
 $datagefim = $data_end_conv;
 
 // Verifica se a data de término é menor que a data de início
-if (strtotime($data_end_conv) < strtotime($data_start_conv)) {
+if (strtotime($data_end_conv) <= strtotime($data_start_conv)) {
     echo json_encode(array("sit" => false, "msg" => "A data de término não pode ser menor que a data de início."));
     exit;
 }
@@ -90,7 +90,7 @@ while ($row = oci_fetch_array($stidevent, OCI_ASSOC + OCI_RETURN_NULLS)) {
 //verifica se a variavel de retorno do select tem alguma informação 
 if (empty($count)) {
 
-    $ideve =  0; //Para incrementar o ID do evento é necessário que tenha pelo menos 1 evento cadastrado para que ele possa continuar a contagem!! 
+    $ideve = 0; //Para incrementar o ID do evento é necessário que tenha pelo menos 1 evento cadastrado para que ele possa continuar a contagem!! 
     $codloc = $dados['local'];
     $titage = $dados['titulo'];
     $datage = $data_start_conv;
@@ -120,13 +120,9 @@ if (empty($count)) {
 
     } else {
 
-        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
         //AQUI FAZER UM ALERT CASO A QUERY NÃO ESTIVER COMPLETA
         $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Falta de informações na Query!</div>';
         header("Location: index.php");
-
-        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
     }
     header('Content-Type: application/json');
@@ -135,7 +131,7 @@ if (empty($count)) {
 
     //AQUI FAZER UM ALERT DE EVENTO NO MESMO HORÁRIO
     $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro: Já existe um evento cadastrado para esse horário!</div>';
-        header("Location: index.php");
+    header("Location: index.php");
 }
 
 $conec->desconecta();

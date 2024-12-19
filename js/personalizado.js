@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     },
     eventClick: function (info) {
-      $("#apagar_evento").attr("href", "proc_apagar_evento.php?id=" + info.event.id);
+      $("#apagar_evento").attr(
+        "href",
+        "proc_apagar_evento.php?id=" + info.event.id
+      );
       info.jsEvent.preventDefault(); // don't let the browser navigate
       console.log(info.event);
       $("#visualizar #id").text(info.event.id);
@@ -93,12 +96,16 @@ $(document).ready(function () {
 
       success: function (retorna) {
         if (retorna["sit"]) {
-          $("#msg-cad").html(retorna['msg']);
+          $("#msg-cad").html(retorna["msg"]);
           swal("Sucesso!", " O Evento foi cadastrado!", "success");
           location.reload();
         } else {
           $("#msg-cad").html(retorna["msg"]);
-          swal("Evento não Cadastrado!", "Horário Indisponível para este Local!", "error");
+          swal(
+            "Evento não Cadastrado!",
+            "Horário Indisponível para este Local!",
+            "error"
+          );
           //alert("Horário Indisponível para este Local!");
         }
       },
@@ -125,12 +132,16 @@ $(document).ready(function () {
       processData: false,
       success: function (retorna) {
         if (retorna["sit"]) {
-          $("#msg-cad").html(retorna['msg']);
+          $("#msg-cad").html(retorna["msg"]);
           swal("Sucesso!", " O Evento foi editado!", "success");
           location.reload();
         } else {
           $("#msg-edit").html(retorna["msg"]);
-          swal("Evento não Editado!", "Não foi possivel editar esse evento!", "error");
+          swal(
+            "Evento não Editado!",
+            "Não foi possivel editar esse evento!",
+            "error"
+          );
         }
       },
     });
@@ -138,4 +149,3 @@ $(document).ready(function () {
 });
 
 //setInterval(events, 1000);
-
