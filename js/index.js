@@ -141,9 +141,6 @@ function buscaCliente(nDocCli){
 
 
 
-
-
-
 function buscaDescricao(eNomTbl,eCmpFil,eValFil,eCmpRet,eWheAdd,eIdeRec){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {

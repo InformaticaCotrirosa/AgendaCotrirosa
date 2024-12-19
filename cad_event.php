@@ -65,6 +65,12 @@ $data_end_conv = date("Y/m/d H:i:s", strtotime($data_end));
 $datage = $data_start_conv;
 $datagefim = $data_end_conv;
 
+// Verifica se a data de término é menor que a data de início
+if (strtotime($data_end_conv) < strtotime($data_start_conv)) {
+    echo json_encode(array("sit" => false, "msg" => "A data de término não pode ser menor que a data de início."));
+    exit;
+}
+
 //@@@@@@@@@@@@@@@@  BUSCA INFORMAÇÕES DE TODOS OS EVENTOS @@@@@@@@@@@@@@@@@@
 
 //verifica se existe algum evento com o mesmo horário
