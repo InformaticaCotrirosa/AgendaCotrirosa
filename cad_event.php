@@ -23,6 +23,7 @@ if ($cUsuCad === false) {
         }
     }
 }
+
 //GET DOS DADOS FORMULARIO
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $codloc = $dados['local'];
@@ -45,7 +46,6 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
     $codusu = strtoupper($row["CODUSU"]);
 }
 
-
 //Select que busca a cor conforme a seleção do local
 $conec = new conexao;
 $conec->conecta();
@@ -65,14 +65,13 @@ $data_end_conv = date("Y/m/d H:i:s", strtotime($data_end));
 $datage = $data_start_conv;
 $datagefim = $data_end_conv;
 
-// Verifica se a data de término é menor que a data de início
+// Verifica se a data de término é menor que a data de início e se a hora é a mesma
 if (strtotime($data_end_conv) <= strtotime($data_start_conv)) {
     echo json_encode(array("sit" => false, "msg" => "A data de término não pode ser menor que a data de início."));
     exit;
 }
 
 //@@@@@@@@@@@@@@@@  BUSCA INFORMAÇÕES DE TODOS OS EVENTOS @@@@@@@@@@@@@@@@@@
-
 //verifica se existe algum evento com o mesmo horário
 $stidevent = $conec->query("SELECT count(*) AS DADOS FROM USU_TAGELOC WHERE USU_CODLOC = $codloc AND
 (

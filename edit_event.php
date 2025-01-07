@@ -110,14 +110,14 @@ if ($user == $codusu) {
 
         if ($sql !== "") {
             $stid = $conec->query($sql);
-           
+
             // ALERT DE UPDATE DO EVENTO
             $linhafec = oci_num_rows($stid);
-        if ($linhafec > 0) {
+            if ($linhafec > 0) {
                 $retorna = ['sit' => true, 'msg' => '<div class="alert alert-success" role="alert">Evento editado com sucesso!</div>'];
                 $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Evento editado com sucesso!</div>';
             } else {
-                $retorna = ['sit' => false, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Evento não foi editado com sucesso!</div>'];
+                $retorna = ['sit' => false, 'msg' => '<div class="alert alert-danger" role="alert">Erro: Evento não foi editado!</div>'];
             }
         }
     } else {

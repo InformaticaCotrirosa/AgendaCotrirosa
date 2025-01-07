@@ -15,7 +15,7 @@ $conec->conecta();
 
 $stid = $conec->query("SELECT * FROM USU_TCADLOC WHERE USU_CODLOC = '$nCodLoc'");
 $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,8 +40,6 @@ $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)
         fieldset {
             border: 3px solid dodgerblue;
         }
-
-
 
         .inputBoxLoc {
             position: relative;
@@ -127,7 +125,8 @@ $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)
                         <label for="nomloc" class='labelInput'>Nome Local:</label>
 
                         <div class='input'>
-                            <input type="text" name="USU_DESLOC" placeholder="Digite o nome do local" value="<?php echo $row['USU_DESLOC']; ?>">
+                            <input type="text" name="USU_DESLOC" placeholder="Digite o nome do local"
+                                value="<?php echo $row['USU_DESLOC']; ?>">
                         </div>
 
                     </div>
@@ -135,7 +134,8 @@ $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)
 
                     <div class='inputBoxLoc'>
                         <label for='sitloc' class='labelInput'>Situação Local: </label>
-                        <input type="text" name="USU_SITLOC" placeholder="<?php echo $row_events['USU_SITLOC']; ?>" value="<?php echo $row['USU_SITLOC']; ?>">
+                        <input type="text" name="USU_SITLOC" placeholder="<?php echo $row_events['USU_SITLOC']; ?>"
+                            value="<?php echo $row['USU_SITLOC']; ?>">
                     </div>
 
 
@@ -146,7 +146,8 @@ $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)
 
 
                     <div class="botoesGerais">
-                        <button type="submit" value="Editar" class="btn btn-warning btn-canc-vis" data-dismiss="modal">Editar</button>
+                        <button type="submit" value="Editar" class="btn btn-warning btn-canc-vis"
+                            data-dismiss="modal">Editar</button>
                     </div>
                 </fieldset>
             </form>
