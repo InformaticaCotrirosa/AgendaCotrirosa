@@ -142,7 +142,7 @@ class conexao {
 	function conecta(){
 			
 		try {
-			$this->con = oci_connect('erp_prd', 'a5hdg83JHY87', 'PROD','AL32UTF8');//'WE8ISO8859P1');
+			$this->con = oci_connect('erp_prd', 'b6Ho9kK1XfHz', 'PROD','AL32UTF8');
 			if (!$this->con) {
 				$this->retorno = oci_error()['message'];
 	        	$this->retorno = "ERRO DE CONEXÃO - SERVIDOR!<br>".$this->retorno ;	

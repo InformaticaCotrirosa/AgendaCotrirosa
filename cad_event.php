@@ -46,6 +46,16 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
     $codusu = strtoupper($row["CODUSU"]);
 }
 
+// VALIDAÇÃO DE PERMISSÃO PARA SALA 7 
+if ($codloc == 7 && $codusu != 1095) {
+    echo json_encode([
+    "sit" => false,
+    "msg" => "Erro: Para agendamento da Sala Cooperação, reporte-se a Secretária. Ramal 301!"
+    ]);
+    exit;
+}
+
+
 //Select que busca a cor conforme a seleção do local
 $conec = new conexao;
 $conec->conecta();
