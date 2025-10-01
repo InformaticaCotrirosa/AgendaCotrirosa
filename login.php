@@ -59,4 +59,4 @@ if ($cUsuCad === false) {
 
 </html>
 
-<?php echo '<script>closeLoading();</script>'; ?>
+<?php // echo '<script>closeLoading();</script>'; ?>
