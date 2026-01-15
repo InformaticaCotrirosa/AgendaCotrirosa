@@ -93,22 +93,24 @@ $(document).ready(function () {
       data: new FormData(this),
       contentType: false,
       processData: false,
-
+      dataType: "json", // Adicione esta linha!
       success: function (retorna) {
         if (retorna["sit"]) {
-          $("#msg-cad").html(retorna["msg"]);
+          //$("#msg-cad").html(retorna["msg"]);
           swal("Sucesso!", " O Evento foi cadastrado!", "success");
           location.reload();
         } else {
-          $("#msg-cad").html(retorna["msg"]);
+          //$("#msg-cad").html(retorna["msg"]);
           swal(
             "Evento não Cadastrado!",
-            "Horário Indisponível para este Local!",
+            retorna["msg"], // Agora sempre será string
             "error"
           );
-          //alert("Horário Indisponível para este Local!");
         }
       },
+      error: function(xhr, status, error) {
+        swal("Erro!", "Erro ao processar requisição. Tente novamente.", "error");
+      }
     });
   });
 
@@ -132,11 +134,11 @@ $(document).ready(function () {
       processData: false,
       success: function (retorna) {
         if (retorna["sit"]) {
-          $("#msg-cad").html(retorna["msg"]);
+          //$("#msg-cad").html(retorna["msg"]);
           swal("Sucesso!", " O Evento foi editado!", "success");
           location.reload();
         } else {
-          $("#msg-edit").html(retorna["msg"]);
+          //$("#msg-edit").html(retorna["msg"]);
           swal(
             "Evento não Editado!",
             "Não foi possivel editar esse evento!",
