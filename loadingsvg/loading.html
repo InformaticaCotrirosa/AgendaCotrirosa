@@ -1,0 +1,42 @@
+<body style="margin:0;display:flex;">
+	<img style="margin:auto" id="loading" src="loading46.svg"  />
+</body>
+
+<script>	
+	async function sleep(ms) {
+	  return new Promise(resolve => setTimeout(resolve, ms));
+	}
+	
+	async function ajuste(){
+		var win = window,
+			doc = document,
+			docElem = doc.documentElement,
+			body = doc.getElementsByTagName('body')[0],
+			width = win.innerWidth || docElem.clientWidth || body.clientWidth,
+			height = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+			width = width-50;
+			height = height-50;
+			if(width > height)
+				width = (width * 630.67) / 673;
+			else
+				height = (height * 673) / 630.67;
+			document.getElementById("loading").style.width = width;
+			document.getElementById("loading").style.height = height;
+	}
+
+	async function load() {
+		do{
+			for (var i = 46; i >= 24; i--) {
+				document.getElementById("loading").src = "loading"+i+".svg";
+				ajuste();
+				await sleep(37);
+			}
+			for (var i = 24; i <= 46; i++) {
+				document.getElementById("loading").src = "loading"+i+".svg";
+				ajuste();
+				await sleep(37);
+			}
+		}while(1==1);
+	}
+	load();
+</script>

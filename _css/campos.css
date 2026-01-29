@@ -1,0 +1,91 @@
+.campos:focus, .campoValor:focus {
+    box-shadow: 0px 0px 0pt 1pt #96d0b2;
+    outline: none;
+}
+
+input, select {
+    border-radius: 5px;
+    line-height: 0px;
+    height: 28px;
+    border: 1px solid #487c44 !important;
+    font-size: 13px;
+    background-color: rgb(246, 246, 246);
+
+    text-transform:uppercase;
+}
+
+.descricaoCampo{
+    text-align: right;
+    margin-right: 5px;
+}
+
+.descricaoRetorno{
+    margin-left: 5px;
+    font-family: tahoma;
+    font-size: 14;
+    line-height: 2;
+}
+
+input.campos:disabled, input.button:disabled, input.campoValor:disabled, input.pageNor:disabled, input.pageSel:disabled, textarea:disabled, input.campos:read-only,  input.campoValor:read-only, input.pageNor:read-only, input.pageSel:read-only, textarea:read-only, a.disabled {
+    border: 1px solid #9d9d9d!important;
+    color: #767272!important;
+    pointer-events: none;
+}
+
+.linhaSGI01{
+    height: 35;
+    width: 100%;
+}
+
+[class^="espacoSGI"] input,[class^="espacoSGI"] select  {
+    width: 100%;
+    line-height: normal;
+}
+
+.espacoSGI01{
+    float: left;
+    margin: 5px;
+    width: 170px;
+    text-align: right;
+}
+
+.espacoSGI02{
+    float: left;
+    width: calc(100% - 180px);
+}
+
+.espacoSGI03{
+    float: left;
+    width: 180px;
+}
+
+.espacoSGI04{
+    float: left;
+    width: 180px;
+    margin-right: 5px;
+}
+
+.espacoSGI06{
+    float: left;
+    width: 230px;
+}
+
+.espacoSGI07{
+    float: left;
+    margin: 5px;
+    width: 80px;
+    text-align: right;
+}
+
+.espacoSGI05{
+    float: left;
+    width: 180px;
+}
+.espacoSGI05 input{
+    float: left;
+}
+
+.espacoSGI05 a{
+    top: 0px!important;
+    margin-left: -22px!important;
+}
