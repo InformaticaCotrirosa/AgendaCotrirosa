@@ -47,10 +47,17 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
 }
 
 // VALIDAÇÃO DE PERMISSÃO PARA SALA 7 
+<<<<<<< HEAD
 if ($codloc == 7 && $codusu != 1095 && $codusu != 668) {
     echo json_encode([
         "sit" => false,
         "msg" => "Erro: Para agendamento da Sala Cooperação, reporte-se a Secretária. Ramal 301!"
+=======
+if ($codloc == 7 && $codusu != 1095) {
+    echo json_encode([
+    "sit" => false,
+    "msg" => "Erro: Para agendamento da Sala Cooperação, reporte-se a Secretária. Ramal 301!"
+>>>>>>> 95628d8ae62ec49c4c62cabf62521564bc62eab9
     ]);
     exit;
 }
