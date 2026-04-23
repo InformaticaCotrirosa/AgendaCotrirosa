@@ -50,7 +50,7 @@ while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
 if ($codloc == 7 && $codusu != 1095 && $codusu != 668) {
     echo json_encode([
         "sit" => false,
-        "msg" => "Erro: Temporariamente  (nas férias da Eduarda), solicitar a inclusão no ramal 339."
+        "msg" => "Erro: Para agendamento da Sala Cooperação, reporte-se a Secretária. Ramal 301!"
     ]);
     exit;
 }
